@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -26,9 +27,9 @@ public class Project {
 
     private String description;
 
-    private String startDate;
+    private Date startDate;
 
-    private String endDate;
+    private Date endDate;
 
     @ManyToMany(fetch = FetchType.LAZY)
     private List<Contributor> contributors;
