@@ -1,5 +1,10 @@
 package com.pagination.services;
 
+import com.pagination.models.Contributor;
+
+import java.util.List;
+import java.util.Optional;
+
 /**
  * Author: Zeeshan Adil
  * User:mhmdz
@@ -8,4 +13,10 @@ package com.pagination.services;
  */
 
 public interface ContributorService {
+
+    Long createContributor(Contributor contributor);
+
+    List<Contributor> getAllContributors();
+
+    Optional<Contributor> getContributorById(Long id);
 }
