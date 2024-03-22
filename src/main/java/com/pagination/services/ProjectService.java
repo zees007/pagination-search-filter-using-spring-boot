@@ -1,5 +1,10 @@
 package com.pagination.services;
 
+import com.pagination.models.Project;
+
+import java.util.List;
+import java.util.Optional;
+
 /**
  * Author: Zeeshan Adil
  * User:mhmdz
@@ -8,4 +13,10 @@ package com.pagination.services;
  */
 
 public interface ProjectService {
+
+    Long createProject(Project project);
+
+    List<Project> getAllProjects();
+
+    Optional<Project> getProjectById(Long id);
 }
