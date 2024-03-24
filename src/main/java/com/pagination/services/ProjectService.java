@@ -1,6 +1,8 @@
 package com.pagination.services;
 
+import com.pagination.dto.ProjectSearchAndFilterRequest;
 import com.pagination.models.Project;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,4 +21,6 @@ public interface ProjectService {
     List<Project> getAllProjects();
 
     Optional<Project> getProjectById(Long id);
+
+    Page<Project> searchAndFilterProject(ProjectSearchAndFilterRequest searchRequest);
 }
