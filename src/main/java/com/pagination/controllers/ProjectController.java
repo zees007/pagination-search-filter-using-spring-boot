@@ -8,11 +8,13 @@
 
 package com.pagination.controllers;
 
+import com.pagination.dto.ProjectSearchAndFilterRequest;
 import com.pagination.models.Contributor;
 import com.pagination.models.Project;
 import com.pagination.services.ContributorService;
 import com.pagination.services.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -48,6 +50,15 @@ public class ProjectController {
     public ResponseEntity<Optional<Project>> getProjectById(@PathVariable Long id){
         try{
             return ResponseEntity.ok(projectService.getProjectById(id));
+        } catch (Exception e){
+            throw new RuntimeException(e.getMessage());
+        }
+    }
+
+    @PostMapping("/pages")
+    public ResponseEntity<Page<Project>> getProjectById(@RequestBody ProjectSearchAndFilterRequest searchRequest){
+        try{
+            return ResponseEntity.ok(projectService.searchAndFilterProject(searchRequest));
         } catch (Exception e){
             throw new RuntimeException(e.getMessage());
         }
