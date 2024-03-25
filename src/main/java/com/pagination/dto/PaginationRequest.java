@@ -19,8 +19,8 @@ import org.springframework.data.domain.Sort;
 @AllArgsConstructor
 public class PaginationRequest {
 
-    private Integer pageNo = 0;
-    private Integer pageSize = 10;
+    private Integer pageNo;
+    private Integer pageSize;
     private String sortBy;
     private String direction;
 
